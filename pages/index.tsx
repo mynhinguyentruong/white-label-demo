@@ -109,7 +109,7 @@ const Home: NextPage = () => {
                 </div>
                 {/*body*/}
                 <div className="relative p-6 flex-aut bg-gray-200">
-                  <form action="#" method="POST">
+                  <form action="/collections/register" method="POST">
                     <div className="overflow-hidden shadow sm:rounded-md">
                       <div className="bg-white px-4 py-5 sm:p-6">
                         <div className="grid grid-cols-6 gap-6">
@@ -127,7 +127,7 @@ const Home: NextPage = () => {
                             />
                           </div>
                           <div className="col-span-6">
-                            <label htmlFor="collection-title" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="collection-description" className="block text-sm font-medium text-gray-700">
                               Collection Description
                             </label>
                             <input
@@ -140,7 +140,7 @@ const Home: NextPage = () => {
                           </div>
 
                           <div className="col-span-6">
-                            <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="image-url" className="block text-sm font-medium text-gray-700">
                             Collection Image URL
                             </label>
                             <input
@@ -153,7 +153,7 @@ const Home: NextPage = () => {
                           </div>
 
                           <div className="col-span-6 sm:col-span-3">
-                            <label htmlFor="country" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="contract-type" className="block text-sm font-medium text-gray-700">
                               Contract Type
                             </label>
                             <select
@@ -205,11 +205,7 @@ const Home: NextPage = () => {
                               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
                           </div>
-
-                        
-
-                         
-                          
+                
                         </div>
                       </div>
                       <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
