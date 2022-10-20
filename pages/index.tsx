@@ -38,7 +38,7 @@ const Home: NextPage = () => {
       //   "collectionId": "e844f3de-e3f9-4fcb-abc6-15e1bff5e6d7"
       // }
     } catch(err) {
-      console.error(err)
+      throw(err)
     }
     
   }
