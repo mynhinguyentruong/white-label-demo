@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.css'
 import React, { useState } from 'react'
 
 import crossmintLogo from '../public/crossmint-logo.svg'
+import Checkout from '../components/Checkout'
 
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -90,10 +91,7 @@ const Home: NextPage = () => {
             </button>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Checkout &rarr;</h2>
-            <p>Begin the checkout process for a mint</p>
-          </a>
+          <Checkout styles={styles}/>
 
           <a
             href="https://github.com/vercel/next.js/tree/canary/examples"
