@@ -3,12 +3,34 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 import crossmintLogo from '../public/crossmint-logo.svg'
 
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false);
+
+  async function registerCollection(e: React.FormEvent<HTMLInputElement>) {
+    e.preventDefault();
+    const response = await fetch('https://staging.crossmint.io/api/v1-alpha1/collections', {
+      method: 'POST',
+      body: JSON.stringify({
+        args: {candyMachineId: '8fGujzW6LFnKwPMvZDeEgVhTM1YXqBdbnqnnGZ49vEyB'},
+        metadata: {
+          title: 'Title',
+          imageUrl: 'https://www.crossmint.io/_next/image?url=%2Fassets%2Fcrossmint%2Flogo.png&w=48&q=75'
+        },
+        chain: 'solana',
+        contractType: 'candy-machine'
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        'X-PROJECT-ID': process.env.CROSSMINT_X_PROJECT_ID,
+        'X-CLIENT-SECRET': process.env.CROSSMINT_X_CLIENT_SECRET
+      }
+    });
+    console.log(response.json())
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -109,7 +131,7 @@ const Home: NextPage = () => {
                 </div>
                 {/*body*/}
                 <div className="relative p-6 flex-aut bg-gray-200">
-                  <form action="/collections/register" method="POST">
+                  <form onSubmit={registerCollection}>
                     <div className="overflow-hidden shadow sm:rounded-md">
                       <div className="bg-white px-4 py-5 sm:p-6">
                         <div className="grid grid-cols-6 gap-6">

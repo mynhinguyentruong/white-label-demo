@@ -13,6 +13,10 @@ const nextConfig = {
       },
     ]
   },
+  env: {
+    CROSSMINT_X_CLIENT_SECRET: process.env.CROSSMINT_X_CLIENT_SECRET,
+    CROSSMINT_X_PROJECT_ID: process.env.CROSSMINT_X_PROJECT_ID
+  }
 }
 
 module.exports = nextConfig
