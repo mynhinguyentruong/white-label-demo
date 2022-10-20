@@ -79,7 +79,8 @@ const Home: NextPage = () => {
               leading-tight
               uppercase
               rounded
-              shadow-md
+              shadow-lg
+              bg-white
               hover:bg-blue-700 hover:shadow-lg hover:text-white
               focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
               active:bg-blue-800 active:shadow-lg
@@ -91,10 +92,10 @@ const Home: NextPage = () => {
             </button>
           </a>
 
-          <Checkout styles={styles}/>
+          <Checkout />
 
           <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
+            href="/wallets/create"
             className={styles.card}
           >
             <h2>Create &rarr;</h2>
@@ -102,7 +103,7 @@ const Home: NextPage = () => {
           </a>
 
           <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="/wallets/transfer"
             className={styles.card}
           >
             <h2>Transfer &rarr;</h2>
@@ -132,7 +133,7 @@ const Home: NextPage = () => {
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                     onClick={() => setShowModal(false)}
                   >
-                    <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                    <span className="bg-gray-200 text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
                       ×
                     </span>
                   </button>

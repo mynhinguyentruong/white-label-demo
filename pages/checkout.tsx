@@ -11,7 +11,7 @@ function CheckoutPage({ data }) {
 
 export async function getServerSideProps() {
 
-    const res = await fetch(`https://staging.crossmint.io/api/v1-alpha1/checkout/mint`, {
+    const res = await fetch(`/checkout/mint`, {
         method: 'POST',
         body: JSON.stringify({
             clientId: "e844f3de-e3f9-4fcb-abc6-15e1bff5e6d7",
