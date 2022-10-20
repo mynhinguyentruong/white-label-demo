@@ -14,26 +14,28 @@ const Home: NextPage = () => {
     e.preventDefault();
     try {
       const response = await fetch('/collections/register', {
-      method: 'POST',
-      body: JSON.stringify({
-        args: {candyMachineId: "8fGujzW6LFnKwPMvZDeEgVhTM1YXqBdbnqnnGZ49vEyB"},
-        metadata: {
-            title: "New Collection created for whitelabel test",
-            description: "yoooooooooooooo",
-            imageUrl: "https://nftstorage.link/ipfs/bafybeibgiu46doec6acc7tcoavyud3kpsd44tszkivenwnseer72iq2ob4/1.png",
-            social: {twitter: "@crossmint", discord: "@discord"}
-        },
-        chain: "solana",
-        contractType: "candy-machine"
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        'X-PROJECT-ID': process.env.CROSSMINT_X_PROJECT_ID,
-        'X-CLIENT-SECRET': process.env.CROSSMINT_X_CLIENT_SECRET
-      }
-    });
-    const data = await response.json();
-    console.log(data)
+        method: 'POST',
+        body: JSON.stringify({
+          args: {candyMachineId: "8fGujzW6LFnKwPMvZDeEgVhTM1YXqBdbnqnnGZ49vEyB"},
+          metadata: {
+              title: "New Collection created for whitelabel test",
+              description: "yoooooooooooooo",
+              imageUrl: "https://nftstorage.link/ipfs/bafybeibgiu46doec6acc7tcoavyud3kpsd44tszkivenwnseer72iq2ob4/1.png",
+              social: {twitter: "@crossmint", discord: "@discord"}
+          },
+          chain: "solana",
+          contractType: "candy-machine"
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+          'X-PROJECT-ID': process.env.CROSSMINT_X_PROJECT_ID,
+          'X-CLIENT-SECRET': process.env.CROSSMINT_X_CLIENT_SECRET
+        }
+      });
+      const data = await response.json();
+      // example of response: {
+      //   "collectionId": "e844f3de-e3f9-4fcb-abc6-15e1bff5e6d7"
+      // }
     } catch(err) {
       console.error(err)
     }
