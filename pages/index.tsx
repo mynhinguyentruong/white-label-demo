@@ -12,16 +12,19 @@ const Home: NextPage = () => {
 
   async function registerCollection(e: React.FormEvent<HTMLInputElement>) {
     e.preventDefault();
-    const response = await fetch('https://staging.crossmint.io/api/v1-alpha1/collections', {
+    try {
+      const response = await fetch('/collections/register', {
       method: 'POST',
       body: JSON.stringify({
-        args: {candyMachineId: '8fGujzW6LFnKwPMvZDeEgVhTM1YXqBdbnqnnGZ49vEyB'},
+        args: {candyMachineId: "8fGujzW6LFnKwPMvZDeEgVhTM1YXqBdbnqnnGZ49vEyB"},
         metadata: {
-          title: 'Title',
-          imageUrl: 'https://www.crossmint.io/_next/image?url=%2Fassets%2Fcrossmint%2Flogo.png&w=48&q=75'
+            title: "New Collection created for whitelabel test",
+            description: "yoooooooooooooo",
+            imageUrl: "https://nftstorage.link/ipfs/bafybeibgiu46doec6acc7tcoavyud3kpsd44tszkivenwnseer72iq2ob4/1.png",
+            social: {twitter: "@crossmint", discord: "@discord"}
         },
-        chain: 'solana',
-        contractType: 'candy-machine'
+        chain: "solana",
+        contractType: "candy-machine"
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +32,12 @@ const Home: NextPage = () => {
         'X-CLIENT-SECRET': process.env.CROSSMINT_X_CLIENT_SECRET
       }
     });
-    console.log(response.json())
+    const data = await response.json();
+    console.log(data)
+    } catch(err) {
+      console.error(err)
+    }
+    
   }
   return (
     <div className={styles.container}>
