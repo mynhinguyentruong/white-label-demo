@@ -22,17 +22,31 @@ function Collection({ nfts }) {
                 'X-CLIENT-SECRET': process.env.CROSSMINT_X_CLIENT_SECRET
             }
         });
+        // if status: pending-verfication -> do something
     };
     
     return (
         <>
-            <div className='grid gap-4 grid-cols-3 grid-rows-3'>
-                <Image src={nfts[0].metadata.image} width={500} height={500} />
-                <button 
-                    onClick={() => setShowModal(true)}
-                    className='text-xl bg-transparent hover:bg-green-500 text-green-700 font-bold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded'
-                >Export
-                </button>
+            <div className='flex justify-center'>
+                <div className='rounded-lg shadow-lg bg-white max-w-md m-3'>
+                    <Image src={nfts[0].metadata.image} width={500} height={500} />
+                    <div className="p-6">
+                        <h5 className="text-gray-900 text-xl font-medium mb-2">Meta data</h5>
+                        {nfts[0].metadata.attributes?.map(attribute => (
+                            <>
+                            <p className="text-gray-700 text-base mb-4">Trait Type: {attribute.trait_type}</p>
+                            <span className="text-gray-700 text-base mb-4">Value: {attribute.value}</span>
+                            </>
+                        ))}
+                        <button 
+                            onClick={() => setShowModal(true)}
+                            className='text-xl inline-block bg-transparent hover:bg-green-500 text-green-700 font-bold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded'
+                        >Export
+                        </button>
+                    </div>
+                </div>
+                
+                
             </div>
      
                 {showModal ? (
