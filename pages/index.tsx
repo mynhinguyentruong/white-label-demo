@@ -86,7 +86,9 @@ const Home: NextPage = () => {
               active:bg-blue-800 active:shadow-lg
               transition
               duration-150
-              ease-in-out" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              ease-in-out" 
+              data-bs-toggle="modal" 
+              data-bs-target="#exampleModal"
               >
                 Launch demo modal
             </button>
@@ -103,11 +105,12 @@ const Home: NextPage = () => {
           </a>
 
           <a
-            href="/wallets"
+            href="/wallets/collection"
             className={styles.card}
           >
-            <h2>Transfer &rarr;</h2>
+            <h2>Check &rarr;</h2>
             <p>
+              Check your client's wallet to see if there is any NFT (for token gating purpose).
               Help your clients transfer NFTs outside from the crossmint custodial wallet to another wallet 
             </p>
           </a>
@@ -153,6 +156,7 @@ const Home: NextPage = () => {
                               type="text"
                               name="collection-title"
                               id="collection-title"
+                              value="New Collection created for whitelabel test"
                               autoComplete="collection-title"
                               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
@@ -165,6 +169,7 @@ const Home: NextPage = () => {
                               type="text"
                               name="collection-description"
                               id="collection-description"
+                              value="a description"
                               autoComplete="collection-description"
                               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
@@ -178,6 +183,7 @@ const Home: NextPage = () => {
                               type="text"
                               name="image-url"
                               id="image-url"
+                              value="https://nftstorage.link/ipfs/bafybeibgiu46doec6acc7tcoavyud3kpsd44tszkivenwnseer72iq2ob4/1.png"
                               autoComplete="email"
                               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
@@ -207,6 +213,7 @@ const Home: NextPage = () => {
                               type="text"
                               name="candy-machine"
                               id="candy-machine"
+                              value="8fGujzW6LFnKwPMvZDeEgVhTM1YXqBdbnqnnGZ49vEyB"
                               autoComplete="candy-machine"
                               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
@@ -219,6 +226,7 @@ const Home: NextPage = () => {
                               type="text"
                               name="twitter"
                               id="twitter"
+                              value="@crossmint"
                               autoComplete="given-name"
                               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
@@ -231,6 +239,7 @@ const Home: NextPage = () => {
                             <input
                               type="text"
                               name="discord"
+                              value="@crossmit-discord"
                               id="discord"
                               autoComplete="family-name"
                               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"

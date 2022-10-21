@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['www.crossmint.io']
+    domains: ['www.crossmint.io', 'nftstorage.link']
   },
   async rewrites() {
     return [

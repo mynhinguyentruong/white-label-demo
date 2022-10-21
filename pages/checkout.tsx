@@ -2,9 +2,9 @@ function CheckoutPage({ data }) {
     // Render data...
     return (
         <div  className="flex h-screen justify-center items-center">
-        <a href={data.checkoutUrl}>
-            <button className="text-xl bg-transparent hover:bg-green-500 text-green-700 font-bold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">Checkout</button>
-        </a>
+            <a href={data.checkoutUrl}>
+                <button className="text-xl bg-transparent hover:bg-green-500 text-green-700 font-bold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">Checkout</button>
+            </a>
         </div>
     )
   }
