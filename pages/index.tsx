@@ -95,7 +95,7 @@ const Home: NextPage = () => {
           <Checkout />
 
           <a
-            href="/wallets/create"
+            href="/wallets"
             className={styles.card}
           >
             <h2>Create &rarr;</h2>
@@ -103,7 +103,7 @@ const Home: NextPage = () => {
           </a>
 
           <a
-            href="/wallets/transfer"
+            href="/wallets"
             className={styles.card}
           >
             <h2>Transfer &rarr;</h2>
