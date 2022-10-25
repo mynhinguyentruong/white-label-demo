@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 
 import crossmintLogo from '../public/crossmint-logo.svg'
 import Checkout from '../components/Checkout'
-import Modal from '../components/Modal'
+import Register from '../components/Register'
 
 const Home: NextPage = () => {
   
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
 
         <div className={styles.grid}>
           
-          <Modal />
+          <Register />
           <a
             href="/wallets"
             className={styles.card}

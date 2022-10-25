@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 
-function Modal() {
+function Register() {
     const [showModal, setShowModal] = useState(false);
 
     const [body, setBody] = useState({
@@ -232,4 +232,4 @@ function Modal() {
     )
 }
 
-export default Modal
+export default Register
