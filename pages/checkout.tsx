@@ -20,6 +20,12 @@ function CheckoutPage({  }) {
             {/* <a href={data.checkoutUrl}>
                 <button className="text-xl bg-transparent hover:bg-green-500 text-green-700 font-bold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">Checkout</button>
             </a> */}
+            <h1 className="text-3xl font-bold">Current User Wallet</h1>
+            <div>
+                <h3>userId: {"..."}</h3>
+                <h3>No NFTs Found</h3>
+                <p>We couldn't find anything in your wallet</p>
+            </div>
         </div>
     )
   }
