@@ -5,10 +5,12 @@ function Wallet() {
 
     const [wallet, setWallet] = useState("")
     const [chain, setChain] = useState("solana")
+    const [userId, setUserId] = useState("")
 
+    console.log(userId)
     async function createNewWallet() {
-        const userId = uuidv4()
         try {
+            console.log(userId)
             const response = await fetch("/wallets/create", {
                 method: 'POST',
                 body: JSON.stringify({
@@ -31,7 +33,17 @@ function Wallet() {
 
     return (
         <>
+            <h3>
+                    Ideally, you would want this unique identifier (userId) to be associate with your client's account
+
+            </h3>
+            <h4>With this unique id, you can check the content of the wallet associated with this userId</h4>
             <div  className="flex h-screen justify-evenly items-center">
+                
+                <div className="flex">
+                    <button className="" onClick={() => setUserId(uuidv4())}>Generate random userId: </button>
+                    <div>{userId}</div>
+                </div>
                 <div className="col-span-6 sm:col-span-3">
                     <label htmlFor="chain" className="block text-sm font-medium text-gray-700">
                         Chain
