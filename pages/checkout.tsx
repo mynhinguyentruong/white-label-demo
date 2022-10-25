@@ -6,16 +6,16 @@ function CheckoutPage({  }) {
         <div  className="flex-col w-full h-full justify-center items-center">
             <h1 className="text-3xl font-bold">Available Collections</h1>
             <div className="flex overflow-x-scroll hover:overflow-scroll space-x-12 bg-gray-200 p-10">
-                <Collection title={"Collection Name"} price={"0.0001"} />
-                <Collection title={"Collection Name"} price={"0.0001"} />
-                <Collection title={"Collection Name"} price={"0.0001"} />
-                <Collection title={"Collection Name"} price={"0.0001"} />
-                <Collection title={"Collection Name"} price={"0.0001"} />
-                <Collection title={"Collection Name"} price={"0.0001"} />
-                <Collection title={"Collection Name"} price={"0.0001"} />
-                <Collection title={"Collection Name"} price={"0.0001"} />
-                <Collection title={"Collection Name"} price={"0.0001"} />
-                <Collection title={"Collection Name"} price={"0.0001"} />
+                <Collection title={"Collection Name"} price={"0.79"} />
+                <Collection title={"Collection Name"} price={"0.79"} />
+                <Collection title={"Collection Name"} price={"0.79"} />
+                <Collection title={"Collection Name"} price={"0.79"} />
+                <Collection title={"Collection Name"} price={"0.79"} />
+                <Collection title={"Collection Name"} price={"0.79"} />
+                <Collection title={"Collection Name"} price={"0.79"} />
+                <Collection title={"Collection Name"} price={"0.79"} />
+                <Collection title={"Collection Name"} price={"0.79"} />
+                <Collection title={"Collection Name"} price={"0.79"} />
             </div>
             {/* <a href={data.checkoutUrl}>
                 <button className="text-xl bg-transparent hover:bg-green-500 text-green-700 font-bold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">Checkout</button>

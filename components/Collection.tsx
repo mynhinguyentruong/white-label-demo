@@ -25,6 +25,10 @@ function Collection({price}) {
                 },
                 collection: {
                     title: "whitelabel update collection test"
+                },
+                redirect: {
+                    continue: "http://localhost:3000/transaction/succeeded",
+                    cancelled: "http://localhost:3000/transaction/failed"
                 }
             }),
             headers: {
@@ -34,7 +38,8 @@ function Collection({price}) {
             }
         })
         const data = await res.json()
-        router.push(data.checkoutUrl)
+        window.open(data.checkoutUrl, "checkout", "width=500,height=1000")
+        // router.push(data.checkoutUrl)
     }
 
     return (
@@ -55,8 +60,8 @@ function Collection({price}) {
                     <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
                 </div>
                 <div className="flex justify-between items-center">
-                    <span className="text-3xl font-bold text-gray-900 dark:text-white">${price}</span>
-                    <button onClick={mintNft} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Mint this collection</button>
+                    <span className="text-3xl font-bold text-gray-900 dark:text-white mr-5">${price}</span>
+                    <button onClick={mintNft} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-small rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Mint this collection</button>
                 </div>
             </div>
         </div>
