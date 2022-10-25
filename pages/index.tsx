@@ -49,11 +49,11 @@ const Home: NextPage = () => {
             href="/wallets/collection"
             className={styles.card}
           >
-            <h2>Check &rarr;</h2>
-            <p>
-              Check your client's wallet to see if there is any NFT (for token gating purpose).
-              Help your clients transfer NFTs outside from the crossmint custodial wallet to another wallet 
-            </p>
+            <h2>Dev Console &rarr;</h2>
+            <ul>
+              <li>Check the current state of a user wallet</li>
+              <li>Transfer NFT to another wallet</li>
+            </ul>
           </a>
           
         </div>  
