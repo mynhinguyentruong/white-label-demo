@@ -1,10 +1,10 @@
 import Image from "next/image"
-import CrossmintLogo from "../../public/crossmint-logo.svg"
+import CrossmintLogo from "../public/crossmint-logo.svg"
 
 import { useRouter } from 'next/router'
 
 
-function Page() {
+function Layout() {
     const router = useRouter()
 
     
@@ -32,7 +32,7 @@ function Page() {
                 <div className="relative">
                 {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
                 <button type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
-                    <span>Collections</span>
+                    <a href="/flow/collections">Collections</a>
                    
                 </button>
                 </div>
@@ -40,7 +40,7 @@ function Page() {
                 <div className="relative">
                 {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
                 <button onClick={() => router.push('/flow/wallets', undefined, {shallow: true})} type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
-                    <span>Wallets</span>
+                    <span>My Wallet</span>
                    
                     
                 </button>
@@ -143,12 +143,10 @@ function Page() {
          
         </div>
             </div>
-            <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-                <h1>Hi Nhi</h1>
-            </div>
+            
         </>
     )
 }
 
 
-export default Page
+export default Layout
