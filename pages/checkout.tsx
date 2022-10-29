@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Collection from "../components/Collection"
 
 function CheckoutPage({  }) {
