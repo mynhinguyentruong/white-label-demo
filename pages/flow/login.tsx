@@ -1,14 +1,19 @@
 import CrossmintLogo from "../../public/crossmint-logo.svg"
 import Image from "next/image"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { UserContext } from "../_app"
 
 function Page() {
-
-    const [email, setEmail] = useState("")
+    const { email, updateEmail } = useContext(UserContext)
 
     function login(e) {
         e.preventDefault()
         console.log(email)
+        // send the email to the /api/hello
+        fetch("/api/hello", {
+            method: "post",
+            body: JSON.stringify(email)
+        })
     }
     return (
         <>
@@ -29,7 +34,7 @@ function Page() {
               Bring your own auth to sign your user in
             </p>
           </div>
-          <form className="mt-8 space-y-6" onSubmit={login}>
+          <form className="mt-8 space-y-6">
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
@@ -44,7 +49,7 @@ function Page() {
                   required
                   className="h-10 relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                   placeholder="Email address"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => updateEmail(e)}
                 />
               </div>
               
@@ -52,6 +57,7 @@ function Page() {
             <div>
             <a href="/flow/1">
               <button
+                onClick={login}
                 type="button"
                 className="group relative flex w-full justify-center rounded-md border border-transparent bg-green-400 py-2 px-4 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >

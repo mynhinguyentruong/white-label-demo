@@ -1,7 +1,7 @@
 import Image from "next/image"
 import CrossmintLogo from "../../public/crossmint-logo.svg"
 
-function Page() {
+function Page({name}) {
     return (
         <>
             <div className="relative bg-white">
@@ -154,10 +154,23 @@ function Page() {
                 </div>
             </div>
             </div>
+         
         </div>
+            </div>
+            <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+                Hello {name}
             </div>
         </>
     )
 }
+
+export async function getServerSideProps() {
+    const res = await fetch("http://localhost:3000/api/hello")
+    const data = await res.json()
+    const name = data.name
+    return {
+      props: {name}, // will be passed to the page component as props
+    }
+  }
 
 export default Page
