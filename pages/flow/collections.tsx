@@ -21,7 +21,7 @@ function Page() {
                             <Image width={280} height={320} src={CollectionImage} alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." className="h-full w-full object-cover object-center group-hover:opacity-75"/>
                         </div>
                         <h3 className="mt-4 text-sm text-gray-700">Tiger One</h3>
-                        <p className="mt-1 text-lg font-medium text-gray-900">$48</p>
+                        <p className="mt-1 text-lg font-medium text-gray-900">0.0001 ETH</p>
                     </a>
 
                     <a href="#" className="group">
@@ -29,7 +29,7 @@ function Page() {
                         <Image width={280} height={320} src={TigerOne} alt="Olive drab green insulated bottle with flared screw lid and flat top." className="h-full w-full object-cover object-center group-hover:opacity-75"/>
                         </div>
                         <h3 className="mt-4 text-sm text-gray-700">Tiger Two</h3>
-                        <p className="mt-1 text-lg font-medium text-gray-900">$35</p>
+                        <p className="mt-1 text-lg font-medium text-gray-900">0.0001 ETH</p>
                     </a>
 
                     <a href="#" className="group">
@@ -37,7 +37,7 @@ function Page() {
                         <Image width={280} height={320} src={TigerTwo} alt="Person using a pen to cross a task off a productivity paper card." className="h-full w-full object-cover object-center group-hover:opacity-75"/>
                         </div>
                         <h3 className="mt-4 text-sm text-gray-700">Tiger Three</h3>
-                        <p className="mt-1 text-lg font-medium text-gray-900">$89</p>
+                        <p className="mt-1 text-lg font-medium text-gray-900">0.0001 ETH</p>
                     </a>
 
                     <a href="#" className="group">
@@ -45,7 +45,7 @@ function Page() {
                         <Image width={280} height={320} src={TigerThree} alt="Hand holding black machined steel mechanical pencil with brass tip and top." className="h-full w-full object-cover object-center group-hover:opacity-75"/>
                         </div>
                         <h3 className="mt-4 text-sm text-gray-700">Tiger Three</h3>
-                        <p className="mt-1 text-lg font-medium text-gray-900">$35</p>
+                        <p className="mt-1 text-lg font-medium text-gray-900">0.0001 ETH</p>
                     </a>
 
                 </div>
