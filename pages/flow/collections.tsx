@@ -7,6 +7,8 @@ import TigerOne from "../../public/tiger-2.png"
 import TigerTwo from "../../public/tiger-3.png"
 import TigerThree from "../../public/tiger-4.png"
 
+import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
+
 function Page() {
 
 
@@ -16,6 +18,7 @@ function Page() {
             body: JSON.stringify({
                 clientId: "e844f3de-e3f9-4fcb-abc6-15e1bff5e6d7",
                 userId: "1",
+                mintTo: "0x4dacC710CC1419Eb383a558C40a5d95630eb175e",
                 emailTo: "nhi@paella.dev",
                 paymentMethod: "fiat",
                 mintConfig: {
@@ -28,8 +31,8 @@ function Page() {
                     photo: "https://gateway.ipfscdn.io/ipfs/QmPbHFfbQkCcoKEk3hRoAqSqLs45KdjAnSP1siq5ToLxVE/collection-image.png"
                 },
                 redirect: {
-                    continue: "https://localhost:3000/flow/wallets",
-                    cancelled: "https://localhost:3000/flow/wallets"
+                    continue: "http://localhost:3000/flow/wallets",
+                    cancelled: "http://localhost:3000/flow/wallets"
                 }
             }),
             headers: {
@@ -56,6 +59,11 @@ function Page() {
                         <h3 className="mt-4 text-sm text-gray-700">Tiger One</h3>
                         <p className="mt-1 text-lg font-medium text-gray-900">0.0001 ETH</p>
                     </a>
+                    <CrossmintPayButton 
+                        clientId="a42d8e00-f8ee-4dad-8e2a-c78235a53de9"
+                        mintConfig='{"type":"erc-721","totalPrice":"0.005", "price": "0.005", quantity: "1"}'
+                        mintTo="0x4dacC710CC1419Eb383a558C40a5d95630eb175e"
+                        environment="staging"/>
 
                     <a href="#" className="group" onClick={mintNft}>
                         <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
