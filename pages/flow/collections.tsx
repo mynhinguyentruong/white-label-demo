@@ -60,10 +60,10 @@ function Page() {
                         <p className="mt-1 text-lg font-medium text-gray-900">0.0001 ETH</p>
                     </a>
                     <CrossmintPayButton 
-                        clientId="a42d8e00-f8ee-4dad-8e2a-c78235a53de9"
-                        mintConfig='{"type":"erc-721","totalPrice":"0.005", "price": "0.005", quantity: "1"}'
-                        mintTo="0x4dacC710CC1419Eb383a558C40a5d95630eb175e"
-                        environment="staging"/>
+                        clientId="d369baa3-4fd5-435b-b857-934aaeb2b8d3"
+                        mintConfig={{"type":"candy-machine","totalPrice":"0.0001","quantity":"1"}}
+                        environment="staging"
+                    />
 
                     <a href="#" className="group" onClick={mintNft}>
                         <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
