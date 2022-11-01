@@ -2,9 +2,6 @@ import Layout from "../../components/Layout"
 
 import Image from "next/image"
 
-import TigerOne from "../../public/tiger-2.png"
-import Link from "next/link"
-
 
 
 function Page({data}) { // data is an array
@@ -41,9 +38,9 @@ function Page({data}) { // data is an array
     )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 
-    const res = await fetch("https://staging.crossmint.io/api/v1-alpha1/wallets/eth:0x4dacC710CC1419Eb383a558C40a5d95630eb175e/nfts", {
+    const res = await fetch("https://staging.crossmint.io/api/v1-alpha1/wallets/sol:D6bDg4DcCpsprQEmnUdcWhpkj2pMDxEJa615oyvS3sQL/nfts", {
         headers: {
             'Content-Type': 'application/json',
             'X-PROJECT-ID': process.env.CROSSMINT_X_PROJECT_ID,
@@ -54,7 +51,7 @@ export async function getStaticProps(context) {
 
     return {
       props: {data}, // will be passed to the page component as props
-      revalidate: 10
+
     }
   }
 
