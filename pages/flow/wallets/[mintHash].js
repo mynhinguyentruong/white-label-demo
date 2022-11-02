@@ -38,7 +38,7 @@ function Page({data}) {
 
 export async function getServerSideProps(context) {
 
-    const res = await fetch("https://staging.crossmint.io/api/v1-alpha1/wallets/sol:D6bDg4DcCpsprQEmnUdcWhpkj2pMDxEJa615oyvS3sQL/nfts", {
+    const res = await fetch("https://staging.crossmint.io/api/v1-alpha1/wallets/sol:9Q4uKgXZNo6pjJq5XDMToyGqeM4BgRTdRcg4Puixcivq/nfts", {
         headers: {
             'Content-Type': 'application/json',
             'X-PROJECT-ID': process.env.CROSSMINT_X_PROJECT_ID,
