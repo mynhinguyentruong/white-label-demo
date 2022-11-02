@@ -18,7 +18,7 @@ function Page() {
             body: JSON.stringify({
                 clientId: "bdcf62da-5392-4b01-b7b9-457f88322ec4",
                 userId: "1",
-                mintTo: "0x4dacC710CC1419Eb383a558C40a5d95630eb175e",
+                mintTo: "9Q4uKgXZNo6pjJq5XDMToyGqeM4BgRTdRcg4Puixcivq",
                 emailTo: "nhi@paella.dev",
                 paymentMethod: "fiat",
                 mintConfig: {
