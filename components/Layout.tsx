@@ -1,5 +1,5 @@
 import Image from "next/image"
-import CrossmintLogo from "../public/crossmint-logo.svg"
+import CrossmintLogo from "../public/brand-logo.png"
 
 import { useRouter } from 'next/router'
 
@@ -16,7 +16,7 @@ function Layout() {
                         <div className="flex justify-start lg:w-0 lg:flex-1">
                             <a href="https://www.crossmint.io/">
                                 <span className="sr-only">Your Company</span>
-                                <Image className="" src={CrossmintLogo} width={30} height={30} alt="Brand Logo"/>
+                                <Image className="" src={CrossmintLogo} width={100} height={80} alt="Brand Logo"/>
                             </a>
                         </div>
                         <div className="-my-2 -mr-2 md:hidden">
@@ -31,21 +31,36 @@ function Layout() {
             <nav className="hidden space-x-10 md:flex">
                 <div className="relative">
                 {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
+                    <button type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
+                    <a href="/flow/1">Shop</a>
+                   
+                    </button>
+                </div>
+                <div className="relative">
+                {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
+                    <button type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
+                    <a href="/flow/collections">Stores</a>
+                   
+                    </button>
+                </div>
+                <div className="relative">
+                {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
                 <button type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
-                    <a href="/flow/collections">Collections</a>
+                    <a href="/flow/collections">NFTs</a>
                    
                 </button>
                 </div>
+               
 
                 <div className="relative">
                 {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
                 <button onClick={() => router.push('/flow/wallets', undefined, {shallow: true})} type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
-                    <span>My Wallet</span>
+                    <span>NFT Wallet</span>
                    
                     
                 </button>
                 </div>
-                <a href="https://docs.crossmint.io/docs/white-label-api-info" className="text-base font-medium text-gray-500 hover:text-gray-900">Docs</a>
+                <a href="https://docs.crossmint.io/docs/white-label-api-info" className="text-base font-medium text-gray-500 hover:text-gray-900">News</a>
 
                 <div className="relative">
                 {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
@@ -111,28 +126,7 @@ function Layout() {
                 </nav>
                 </div>
             </div>
-            <div className="space-y-6 py-6 px-5">
-                <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">Pricing</a>
-
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">Docs</a>
-
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">Help Center</a>
-
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">Guides</a>
-
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">Events</a>
-
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">Security</a>
-                </div>
-                <div>
-                <a href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Sign uppp</a>
-                <p className="mt-6 text-center text-base font-medium text-gray-500">
-                    Existing customer?
-                    <a href="#" className="text-indigo-600 hover:text-indigo-500">Nhi</a>
-                </p>
-                </div>
-            </div>
+           
             </div>
          
         </div>
