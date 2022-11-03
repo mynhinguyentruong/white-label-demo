@@ -26,7 +26,7 @@ function Page({title, children, data}) {
     return(
         <>
         <Layout/>
-        <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         
 <div className="flex flex-col items-center justify-start flex-1 w-full  mt-12 mb-6 md:flex-row md:items-start xl:w-11/12">
 
