@@ -1,17 +1,87 @@
 import Layout from "../../components/Layout"
 
 import Image from "next/image"
+import Link from "next/link"
 
+import CrossmintLogo from "../../public/crossmint-logo.svg"
+import { useRouter } from "next/router"
+
+import {
+    ArrowsRightLeftIcon,
+    RectangleStackIcon,
+    UsersIcon,
+    UserIcon,
+    LifebuoyIcon,
+} from "@heroicons/react/24/outline";
 
 
 function Page({data}) { // data is an array
+
+
+    const MenuItems: { title: string; href: string; disabled?: boolean }[] = [
+        { title: "Account", href: `/user/account` },
+        { title: "Collection", href: `/user/collection` },
+        { title: "Transactions", href: `/user/transactions` },
+        { title: "Linked Accounts", href: `/user/connections` },
+        { title: "Support", href: `/support` },
+    ];
+
     return (
         <>
             <Layout/>
+
             {data.length > 0 ? (
                 <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-                    <h2 className="font-bold mb-10 text-3xl pb-10">Buy NFTs</h2>
-                
+                    <h2 className="font-bold mb-10 text-3xl pb-10">My NFTs</h2>
+                    <div className="flex flex-col items-center justify-start flex-1 w-full  mt-12 mb-6 md:flex-row md:items-start xl:w-11/12">
+
+                    <div className="flex flex-col w-full md:w-[265px] min-w-[265px] items-center justify-start md:mr-12">
+                        {/* TODO: Abstract this to a component like UserDataDisplay */}
+                        <div className="flex items-center justify-between w-full pb-4 mb-4 border-b">
+                            <Image
+                                src={CrossmintLogo}
+                                width={35}
+                                height={35}
+                                className="ml-2"
+                                alt="User Logo"
+                            />
+                            <div className="flex flex-col items-start justify-between flex-1 ml-3">
+                                <h1 className="text-[#20343E] font-semibold tracking-tight text-lg leading-tight">
+                                    Nhi Nguyen
+                                </h1>
+                                <p className="text-sm text-[#8898A0] font-medium">
+                                    nhi@paella.dev
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-start w-full mb-6 md:flex-col">
+                            {MenuItems.map((item) => {
+                                return (
+                                    <MenuItem
+                                        key={item.title}
+                                        title={item.title}
+                                        href={item.href}
+                                        disabled={item.disabled}
+                                    />
+                                );
+                            })}
+                        </div>
+                        {/* {showTestMints && ( */}
+                            {/* <Button className="w-full" href="/admin/testing">
+                                Go to test mint page
+                            </Button> */}
+                        {/* )} */}
+                    </div>
+            
+                <div className="flex flex-col items-center justify-start w-full h-full mb-6">
+                    {/* {title && (
+                        <h1 className="w-full pb-4 border-b border-[#e9ecf1] font-semibold text-[#20343E] text-xl">
+                            {title}
+                        </h1>
+                    )}
+                    {children} */}
+                </div>
+            </div>
                     <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                         {data.map(nft => (
                            
@@ -55,4 +125,59 @@ export async function getServerSideProps(context) {
     }
   }
 
+
+  function MenuItem({ title, href, disabled = false }: IMenuItem) {
+    const { pathname } = useRouter();
+
+    const match = pathname.indexOf(href) !== -1;
+
+    const Icon = () => {
+        switch (title) {
+            case "Account":
+                return <UserIcon className="w-6 h-6" />;
+            case "Collection":
+                return <RectangleStackIcon className="w-6 h-6" />;
+            case "Transactions":
+                return <ArrowsRightLeftIcon className="w-6 h-6" />;
+            case "Linked Accounts":
+                return <UsersIcon className="w-6 h-6" />;
+            case "Support":
+                return <LifebuoyIcon className="w-6 h-6" />;
+
+            default:
+                return null;
+        }
+    };
+
+    const handleClick = disabled
+        ? (e: any) => {
+              e.preventDefault();
+          }
+        : undefined;
+
+    if (disabled) {
+        return null;
+    }
+
+    const menuItemClasses = classNames(
+        "flex w-full rounded-lg h-[50px] items-center justify-center p-3 transition-all duration-100",
+        match ? "bg-[#f2f4f5] text-[#424852]" : "bg-white text-[#8898a0] hover:opacity-70"
+    );
+
+    return (
+        <Link href={href}>
+            <a onClick={handleClick} className={menuItemClasses}>
+                <div className="flex items-center justify-center">
+                    <Icon />
+                </div>
+
+                <p className="flex-1 hidden ml-2 font-semibold md:flex md:text-lg">{title}</p>
+            </a>
+        </Link>
+    );
+}
 export default Page
+
+export function classNames(...classes: (string | undefined)[]) {
+    return classes.filter(Boolean).join(" ");
+}
