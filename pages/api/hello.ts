@@ -5,11 +5,26 @@ type Data = {
   name: string;
 };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const { name } = req.body;
-  console.log(req.body);
-  res.status(200).json({ name: "Nhi" });
+  try {
+    const response = await fetch(
+      "https://staging.crossmint.io/api/v1-alpha1/wallets?userId=2",
+      {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json",
+          "X-PROJECT-ID": process.env.CROSSMINT_X_PROJECT_ID,
+          "X-CLIENT-SECRET": process.env.CROSSMINT_X_CLIENT_SECRET,
+        },
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+    res.status(200).json(data);
+  } catch (err) {
+    console.log(err);
+  }
 }
