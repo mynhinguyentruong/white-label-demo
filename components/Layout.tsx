@@ -54,7 +54,7 @@ function Layout() {
 
                 <div className="relative">
                 {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
-                <button onClick={() => router.push('/flow/wallets', undefined, {shallow: true})} type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
+                <button onClick={() => router.push('/user/collection', undefined, {shallow: true})} type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
                     <span>NFT Wallet</span>
                    
                     

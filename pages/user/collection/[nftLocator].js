@@ -28,7 +28,9 @@ function Page({ data }) {
                 <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-x-[70px] max-w-[1300px]">
                     <div className="flex flex-col items-center justify-start py-10">
                         <Image src={metadata.image} className="w-full rounded-xl" alt={metadata.name} width={500}
-        height={500} />
+                            height={500} priority 
+                            // placeholder='blur' blurDataURL='' 
+                            />
                     </div>
                     <div className="flex flex-col items-center justify-start w-full mt-8">
                         <div className="flex justify-between w-full">
