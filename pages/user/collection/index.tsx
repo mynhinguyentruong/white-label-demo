@@ -13,7 +13,7 @@ import {
 
 import Layout from "../../../components/Layout";
 
-function Page({title, children, data}) {
+function Page({data}) {
 
 
     const MenuItems: { title: string; href: string; disabled?: boolean }[] = [
@@ -92,7 +92,7 @@ function Page({title, children, data}) {
                     No NFTs Found
                </h1>
                <p>We couldn't find anything in your collection</p>
-               <p>Visit <a href="/flow/collections" className="hover:text-green-700 text-green-400">Collections </a> to buy NFT on our site</p>
+               <p>Visit <Link href="/flow/collections" className="hover:text-green-700 text-green-400">Collections </Link> to buy NFT on our site</p>
             </div>)}
 </div>
 </div>

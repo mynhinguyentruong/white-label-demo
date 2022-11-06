@@ -31,8 +31,8 @@ function Page() {
                     photo: "https://gateway.ipfscdn.io/ipfs/QmPbHFfbQkCcoKEk3hRoAqSqLs45KdjAnSP1siq5ToLxVE/collection-image.png"
                 },
                 redirect: {
-                    continue: "http://localhost:3000/flow/wallets",
-                    cancelled: "http://localhost:3000/flow/wallets"
+                    continue: "http://localhost:3000/transaction/succeeded",
+                    cancel: "http://localhost:3000/transaction/failed"
                 }
             }),
             headers: {
