@@ -2,6 +2,7 @@ import Image from "next/image"
 import CrossmintLogo from "../../public/crossmint-logo.svg"
 
 import { useRouter } from 'next/router'
+import Link from "next/link"
 import Layout from "../../components/Layout"
 
 

@@ -92,7 +92,7 @@ function Page({data}) {
                     No NFTs Found
                </h1>
                <p>We couldn't find anything in your collection</p>
-               <p>Visit <Link href="/flow/collections" className="hover:text-green-700 text-green-400">Collections </Link> to buy NFT on our site</p>
+               <p>Visit <a href="/flow/collections" className="hover:text-green-700 text-green-400">Collections </a> to buy NFT on our site</p>
             </div>)}
 </div>
 </div>
@@ -157,9 +157,9 @@ export function classNames(...classes: (string | undefined)[]) {
     return classes.filter(Boolean).join(" ");
 }
 
-export async function getServerSideProps(context) {
-
-    const res = await fetch("https://staging.crossmint.io/api/v1-alpha1/wallets/sol:9Q4uKgXZNo6pjJq5XDMToyGqeM4BgRTdRcg4Puixcivq/nfts", {
+export async function getServerSideProps() {
+    // https://staging.crossmint.io/api/v1-alpha1/wallets/sol:9Q4uKgXZNo6pjJq5XDMToyGqeM4BgRTdRcg4Puixcivq/nfts
+    const res = await fetch("https://staging.crossmint.io/api/v1-alpha1/wallets/sol:5kmhoBPJmuM5ZF8nB62rhR9PrLAxm6UMzFmU85kjDNjt/nfts", {
         headers: {
             'Content-Type': 'application/json',
             'X-PROJECT-ID': process.env.CROSSMINT_X_PROJECT_ID,

@@ -7,8 +7,6 @@ import TigerOne from "../../public/tiger-2.png"
 import TigerTwo from "../../public/tiger-3.png"
 import TigerThree from "../../public/tiger-4.png"
 
-import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
-
 function Page() {
 
 
@@ -17,8 +15,8 @@ function Page() {
             method: 'POST',
             body: JSON.stringify({
                 clientId: "bdcf62da-5392-4b01-b7b9-457f88322ec4",
-                userId: "1",
-                mintTo: "9Q4uKgXZNo6pjJq5XDMToyGqeM4BgRTdRcg4Puixcivq",
+                userId: "2",
+                mintTo: "5kmhoBPJmuM5ZF8nB62rhR9PrLAxm6UMzFmU85kjDNjt",
                 emailTo: "nhi@paella.dev",
                 paymentMethod: "fiat",
                 mintConfig: {
