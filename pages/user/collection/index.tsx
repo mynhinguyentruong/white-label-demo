@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import CrossmintLogo from "../../../public/crossmint-logo.svg"
+import UserLogo from "../../../public/Sample_User_Icon.png"
 
 import {
     ArrowsRightLeftIcon,
@@ -34,7 +35,7 @@ function Page({data}) {
     {/* TODO: Abstract this to a component like UserDataDisplay */}
     <div className="flex items-center justify-between w-full pb-4 mb-4 border-b">
         <Image
-            src={CrossmintLogo}
+            src={UserLogo}
             width={35}
             height={35}
             className="ml-2"

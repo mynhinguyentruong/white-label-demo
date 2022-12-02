@@ -93,7 +93,7 @@ function Layout() {
             <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="px-5 pt-5 pb-6">
                 <div className="flex items-center justify-between">
-                    <Image className="w-1" src={CrossmintLogo} width={30} height={30} alt="Your Company" />
+                    <Image className="w-2" src={CrossmintLogo} width={70} height={70} alt="Your Company" />
                 <div className="-mr-2">
                     <button type="button" className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                     <span className="sr-only">Close menu</span>
@@ -103,23 +103,28 @@ function Layout() {
                 </div>
                 </div>
                 <div className="mt-6">
-                <nav className="grid gap-y-8">
-                    
-
-                
-
-                    
+                <nav className="grid gap-y-8 z-50 bg-white-900">
 
                     <a href="#" className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
                     {/* <!-- Heroicon name: outline/squares-2x2 --> */}
                     
-                    <span className="ml-3 text-base font-medium text-gray-900">Integrations</span>
+                    <span className="ml-3 text-base font-medium text-gray-900">Stores</span>
                     </a>
 
                     <a href="#" className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
                     {/* <!-- Heroicon name: outline/arrow-path --> */}
                     
-                    <span className="ml-3 text-base font-medium text-gray-900">Automations</span>
+                    <span className="ml-3 text-base font-medium text-gray-900">NFTs</span>
+                    </a>
+                    <a href="#" className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
+                    {/* <!-- Heroicon name: outline/arrow-path --> */}
+                    
+                    <span className="ml-3 text-base font-medium text-gray-900">NFT Wallet</span>
+                    </a>
+                    <a href="#" className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
+                    {/* <!-- Heroicon name: outline/arrow-path --> */}
+                    
+                    <span className="ml-3 text-base font-medium text-gray-900">Support</span>
                     </a>
                 </nav>
                 </div>
