@@ -14,9 +14,10 @@ export default function NavigationTabProvider({ children }) {
         { name: 'Stores', href: '/flow/1', current: false },
         { name: 'NFTs', href: '/flow/collections', current: false },
         { name: 'NFT Wallet', href: '/user/collection', current: false },
+        { name: 'Support', href: 'https://docs.crossmint.io/docs', current: false },
     ])
 
-    const [isLoading, setIsLoading] = useState()
+    const [isLoading, setIsLoading] = useState(false)
 
     function something(item) {
         setNavigation(prevState => {
@@ -26,6 +27,7 @@ export default function NavigationTabProvider({ children }) {
         console.log("current global state",navigation)
         console.log("current global state",navigation)
         router.push(item.href);
+        setIsLoading(true);
     }
 
     return (
