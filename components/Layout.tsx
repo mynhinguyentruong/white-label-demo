@@ -1,21 +1,20 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useContext } from "react";
+import { NavigationTabContext } from "../context/NavigationTabContext";
 import BrandLogo from "../public/brand-logo.png"
 
 
-const navigation = [
-    { name: 'Shop', href: '/flow/1', current: true },
-    { name: 'Stores', href: '/flow/1', current: false },
-    { name: 'NFTs', href: '/flow/collections', current: false },
-    { name: 'NFT Wallet', href: '/user/collection', current: false },
-]
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
 export default function Layout() {
+
+    const { navigation, something } = useContext(NavigationTabContext)
+    console.log(navigation)
     return (
         <Disclosure as="nav" className="bg-white">
             {({ open }) => (
@@ -49,7 +48,8 @@ export default function Layout() {
                                 <div className="hidden sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
                                         {navigation.map((item) => (
-                                            <a
+                                            <button
+                                                onClick={() => something(item)}
                                                 key={item.name}
                                                 href={item.href}
                                                 className={classNames(
@@ -59,7 +59,7 @@ export default function Layout() {
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </button>
                                         ))}
                                     </div>
                                 </div>
@@ -140,7 +140,7 @@ export default function Layout() {
                                     as="a"
                                     href={item.href}
                                     className={classNames(
-                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-900 hover:bg-gray-700 hover:text-white',
                                         'block px-3 py-2 rounded-md text-base font-medium'
                                     )}
                                     aria-current={item.current ? 'page' : undefined}
