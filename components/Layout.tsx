@@ -1,143 +1,157 @@
-import Image from "next/image"
-import CrossmintLogo from "../public/brand-logo.png"
+import { Fragment } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import BrandLogo from "../public/brand-logo.png"
 
-import { useRouter } from 'next/router'
 
+const navigation = [
+    { name: 'Shop', href: '/flow/1', current: true },
+    { name: 'Stores', href: '/flow/1', current: false },
+    { name: 'NFTs', href: '/flow/collections', current: false },
+    { name: 'NFT Wallet', href: '/user/collection', current: false },
+]
 
-function Layout() {
-    const router = useRouter()
-
-    
-    return (
-        <>
-            <div className="relative bg-white">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6">
-                    <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-                        <div className="flex justify-start lg:w-0 lg:flex-1">
-                            <a href="https://www.crossmint.io/">
-                                <span className="sr-only">Your Company</span>
-                                <Image className="" src={CrossmintLogo} width={100} height={80} alt="Brand Logo"/>
-                            </a>
-                        </div>
-                        <div className="-my-2 -mr-2 md:hidden">
-                            <button type="button" className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
-                            <span className="sr-only">Open menu</span>
-                            {/* <!-- Heroicon name: outline/bars-3 --> */}
-                            
-                            </button>
-                        </div>
-            <nav className="hidden space-x-10 md:flex">
-                <div className="relative">
-                {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
-                    <button type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
-                    <a href="/flow/1">Shop</a>
-                   
-                    </button>
-                </div>
-                <div className="relative">
-                {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
-                    <button type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
-                    <a href="/flow/collections">Stores</a>
-                   
-                    </button>
-                </div>
-                <div className="relative">
-                {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
-                <button type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
-                    <a href="/flow/collections">NFTs</a>
-                   
-                </button>
-                </div>
-               
-
-                <div className="relative">
-                {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
-                <button onClick={() => router.push('/user/collection', undefined, {shallow: true})} type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
-                    <span>NFT Wallet</span>
-                   
-                    
-                </button>
-                </div>
-                <a href="https://docs.crossmint.io/docs/white-label-api-info" className="text-base font-medium text-gray-500 hover:text-gray-900">News</a>
-
-                <div className="relative">
-                {/* <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" --> */}
-                <button type="button" className="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
-                    <span>Support</span>
-                   
-                    
-                </button>
-
-               
-                
-                </div>
-            </nav>
-            <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-                <a href="/flow/login" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">Nhi</a>
-                <a href="/flow/login" className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Log out</a>
-            </div>
-            </div>
-        </div>
-
-        {/* <!--
-            Mobile menu, show/hide based on mobile menu state.
-
-            Entering: "duration-200 ease-out"
-            From: "opacity-0 scale-95"
-            To: "opacity-100 scale-100"
-            Leaving: "duration-100 ease-in"
-            From: "opacity-100 scale-100"
-            To: "opacity-0 scale-95"
-        --> */}
-        <div className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
-            <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-            <div className="px-5 pt-5 pb-6">
-                <div className="flex items-center justify-between">
-                    <Image className="w-2" src={CrossmintLogo} width={70} height={70} alt="Your Company" />
-                <div className="-mr-2">
-                    <button type="button" className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                    <span className="sr-only">Close menu</span>
-                    {/* <!-- Heroicon name: outline/x-mark --> */}
-                    
-                    </button>
-                </div>
-                </div>
-                <div className="mt-6">
-                <nav className="grid gap-y-8 z-50 bg-white-900">
-
-                    <a href="#" className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
-                    {/* <!-- Heroicon name: outline/squares-2x2 --> */}
-                    
-                    <span className="ml-3 text-base font-medium text-gray-900">Stores</span>
-                    </a>
-
-                    <a href="#" className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
-                    {/* <!-- Heroicon name: outline/arrow-path --> */}
-                    
-                    <span className="ml-3 text-base font-medium text-gray-900">NFTs</span>
-                    </a>
-                    <a href="#" className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
-                    {/* <!-- Heroicon name: outline/arrow-path --> */}
-                    
-                    <span className="ml-3 text-base font-medium text-gray-900">NFT Wallet</span>
-                    </a>
-                    <a href="#" className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
-                    {/* <!-- Heroicon name: outline/arrow-path --> */}
-                    
-                    <span className="ml-3 text-base font-medium text-gray-900">Support</span>
-                    </a>
-                </nav>
-                </div>
-            </div>
-           
-            </div>
-         
-        </div>
-            </div>
-            
-        </>
-    )
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
 }
 
+export default function Layout() {
+    return (
+        <Disclosure as="nav" className="bg-white">
+            {({ open }) => (
+                <>
+                    <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                        <div className="relative flex h-16 items-center justify-between">
+                            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                                {/* Mobile menu button*/}
+                                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                    <span className="sr-only">Open main menu</span>
+                                    {open ? (
+                                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                                    ) : (
+                                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                                    )}
+                                </Disclosure.Button>
+                            </div>
+                            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                                <div className="flex flex-shrink-0 items-center">
+                                    <img
+                                        className="block h-8 w-auto lg:hidden"
+                                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                                        alt="Your Company"
+                                    />
+                                    <img
+                                        className="hidden h-8 w-auto lg:block"
+                                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                                        alt="Your Company"
+                                    />
+                                </div>
+                                <div className="hidden sm:ml-6 sm:block">
+                                    <div className="flex space-x-4">
+                                        {navigation.map((item) => (
+                                            <a
+                                                key={item.name}
+                                                href={item.href}
+                                                className={classNames(
+                                                    item.current ? 'bg-gray-900 text-white' : 'text-gray-900 hover:bg-gray-700 hover:text-white',
+                                                    'px-3 py-2 rounded-md text-sm font-medium'
+                                                )}
+                                                aria-current={item.current ? 'page' : undefined}
+                                            >
+                                                {item.name}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                                <button
+                                    type="button"
+                                    className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                >
+                                    <span className="sr-only">View notifications</span>
+                                    <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                </button>
 
-export default Layout
+                                {/* Profile dropdown */}
+                                <Menu as="div" className="relative ml-3">
+                                    <div>
+                                        <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                            <span className="sr-only">Open user menu</span>
+                                            <img
+                                                className="h-8 w-8 rounded-full"
+                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                alt=""
+                                            />
+                                        </Menu.Button>
+                                    </div>
+                                    <Transition
+                                        as={Fragment}
+                                        enter="transition ease-out duration-100"
+                                        enterFrom="transform opacity-0 scale-95"
+                                        enterTo="transform opacity-100 scale-100"
+                                        leave="transition ease-in duration-75"
+                                        leaveFrom="transform opacity-100 scale-100"
+                                        leaveTo="transform opacity-0 scale-95"
+                                    >
+                                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href="#"
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                    >
+                                                        Your Profile
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href="#"
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                    >
+                                                        Settings
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href="#"
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                    >
+                                                        Sign out
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+                                        </Menu.Items>
+                                    </Transition>
+                                </Menu>
+                            </div>
+                        </div>
+                    </div>
+
+                    <Disclosure.Panel className="sm:hidden">
+                        <div className="space-y-1 px-2 pt-2 pb-3">
+                            {navigation.map((item) => (
+                                <Disclosure.Button
+                                    key={item.name}
+                                    as="a"
+                                    href={item.href}
+                                    className={classNames(
+                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                        'block px-3 py-2 rounded-md text-base font-medium'
+                                    )}
+                                    aria-current={item.current ? 'page' : undefined}
+                                >
+                                    {item.name}
+                                </Disclosure.Button>
+                            ))}
+                        </div>
+                    </Disclosure.Panel>
+                </>
+            )}
+        </Disclosure>
+    )
+}

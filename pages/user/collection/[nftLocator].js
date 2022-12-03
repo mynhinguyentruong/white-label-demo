@@ -39,7 +39,7 @@ function Page({ data }) {
                                 <button className='rounded px-7 py-2 bg-transparent border border-gray-500 enabled:hover:bg-custom-tertiary-hover enabled:hover:text-green-500'>Export</button>
                                 <button
                                     id="qr-button"
-                                    tiny
+                                    tiny="true"
                                     type="tertiary"
                                     onClick={() => setShowQRModal(true)}
                                     className="px-[28px] py-2 border border-gray-500 rounded enabled:hover:text-green-500"
