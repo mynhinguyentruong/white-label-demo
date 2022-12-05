@@ -1,4 +1,4 @@
-import CrossmintLogo from "../../public/brand-logo.png"
+import CrossmintLogo from "../../public/logo-text.png"
 import Image from "next/image"
 
 import { useState } from "react"
@@ -16,8 +16,8 @@ function Page() {
               
               src={CrossmintLogo}
               alt="Your Company"
-              width={100} 
-              height={80}
+              width={150}
+              height={100}
             />
             </div>
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
