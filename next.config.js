@@ -27,7 +27,9 @@ const nextConfig = {
   },
   env: {
     CROSSMINT_X_CLIENT_SECRET: process.env.CROSSMINT_X_CLIENT_SECRET,
-    CROSSMINT_X_PROJECT_ID: process.env.CROSSMINT_X_PROJECT_ID
+    CROSSMINT_X_PROJECT_ID: process.env.CROSSMINT_X_PROJECT_ID,
+    API_KEY: process.env.API_KEY,
+    PROD_PROJECT_ID: process.env.PROD_PROJECT_ID
   }
 }
 
