@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 export default function YourCustomConnectButton() {
     const [address, setAddress] = useState<string | undefined>(undefined);
     const [nfts, setNfts] = useState([]);
+    const [crossmintConnect, setCrossmintConnect] = useState(null)
 
     console.log(address)
     console.log(address)
@@ -14,6 +15,8 @@ export default function YourCustomConnectButton() {
             apiKey: process.env.API_KEY,
             chain: BlockchainTypes.ETHEREUM, // BlockchainTypes.ETHEREUM || BlockchainTypes.POLYGON. For solana use BlockchainTypes.SOLANA
         });
+
+        setCrossmintConnect(_crossmintConnect)
 
         // Ask the user to sign in and give access to their publicKey
         const address = await _crossmintConnect.connect();
@@ -38,6 +41,11 @@ export default function YourCustomConnectButton() {
 
     }
 
+    async function signMessage() {
+
+    }
+
+
     return (
         <>
             <Layout/>
@@ -48,6 +56,7 @@ export default function YourCustomConnectButton() {
                 >
                     {address ? address.slice(0, 6) + "..." : "Connect to Crossmint Wallet"}
                 </button>
+                <button onClick={signMessage}>Sign Message</button>
             </div>
             {(address && nfts) && (
                 <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
@@ -60,7 +69,6 @@ export default function YourCustomConnectButton() {
                             <p className="mt-1 text-xs text-gray-900 truncate">mintHash: {nft.locator}</p>
                         </a>
                     ))}
-
                 </div>
             )}
         </>
