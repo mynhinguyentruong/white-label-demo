@@ -1,19 +1,36 @@
 import Image from "next/image";
 import {ReactNode, useEffect, useState} from "react";
 import NFTImage from "../../public/nfts-animation.gif";
-import { PhotoIcon } from "@heroicons/react/24/solid";
+import {PhotoIcon} from "@heroicons/react/24/solid";
+import {router} from "next/client";
 
 
 export default function Success() {
 
+    const [isTimedOut, setIsTimedOut] = useState(false)
+    const [countdown, setCountdown] = useState(5);
+
     function getImage() {
-        return <Image src={NFTImage} alt="Minting" width={200} height={125} />;
+        return <Image src={NFTImage} alt="Minting" width={200} height={125}/>;
     }
 
     function getIcon() {
-        return <PhotoIcon className="w-5 mr-0 text-custom-stroke-focus" />;
+        return <PhotoIcon className="w-5 mr-0 text-custom-stroke-focus"/>;
 
     }
+
+    useEffect(() => {
+
+        if (countdown >= 1) {
+            setTimeout(() => {
+                setCountdown((prevState) => prevState - 1)
+            }, 1000)
+        }
+        else {
+            router.push("/completed")
+        }
+    })
+
     return (
         <div className="flex flex-col items-center justify-start w-full pt-0 overflow-x-hidden xs:pt-32">
             <div className="w-full">
@@ -26,7 +43,7 @@ export default function Success() {
                         <span>Estimated time</span>
                     </div>
                     <div className="w-full mb-5">
-                        <ProgressBar  />
+                        <ProgressBar/>
                     </div>
                     <div className="w-full">
                         <p className="text-right text-xs">
@@ -36,11 +53,13 @@ export default function Success() {
                 </CheckoutLayoutContainer>
                 <CheckoutLayoutContainer className="px-4 py-8">
                     <div className="flex items-center justify-between w-full mb-5">
-                        <h3 className="font-medium text-custom-text-secondary font-semibold text-custom-text-primary text-base mb-3">Order status</h3>
+                        <h3 className="font-medium text-custom-text-secondary font-semibold text-custom-text-primary text-base mb-3">Order
+                            status</h3>
                     </div>
                     <div className="flex items-center justify-between">
                         <div className="flex items-center">
-                            <div className="p-2 rounded bg-transparent border border-custom-stroke-focus w-[40px] h-[40px] flex justify-center items-center mr-5">
+                            <div
+                                className="p-2 rounded bg-transparent border border-custom-stroke-focus w-[40px] h-[40px] flex justify-center items-center mr-5">
                                 {getIcon()}
                             </div>
                             <div>
@@ -70,7 +89,6 @@ export default function Success() {
             </div>
 
 
-
             <div className="mt-6 mb-24">
                 Powered by mybrand
             </div>
@@ -80,7 +98,7 @@ export default function Success() {
 
 }
 
-export const CheckoutLayoutContainer = ({ children, className, ...props }) => (
+export const CheckoutLayoutContainer = ({children, className, ...props}) => (
     <div
         className={classNames(
             "flex flex-col w-full max-w-full rounded-lg bg-custom-card-fill xs:items-center",
@@ -99,7 +117,7 @@ export function classNames(...classes: (string | undefined)[]) {
 export function ProgressBar() {
     const [loadingProgress, setLoadingProgress] = useState(0);
     const numberOfIterations = 10;
-    const duration =100000;
+    const duration = 100000;
     const loadingTransitionDuration = duration / numberOfIterations;
 
     return (
@@ -109,7 +127,7 @@ export function ProgressBar() {
     )
 }
 
-export  function Loader({ color, size }) {
+export function Loader({color, size}) {
     return (
         <span className="animate-fade">
             <div
