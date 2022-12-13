@@ -2,13 +2,15 @@ import Image from "next/image";
 import {ReactNode, useEffect, useState} from "react";
 import NFTImage from "../../public/nfts-animation.gif";
 import {PhotoIcon} from "@heroicons/react/24/solid";
-import {router} from "next/client";
+import {useRouter} from "next/router";
 
 
 export default function Success() {
+    const router = useRouter();
+
 
     const [isTimedOut, setIsTimedOut] = useState(false)
-    const [countdown, setCountdown] = useState(5);
+    const [countdown, setCountdown] = useState(15);
 
     function getImage() {
         return <Image src={NFTImage} alt="Minting" width={200} height={125}/>;
