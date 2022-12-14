@@ -66,7 +66,7 @@ function Page() {
           <h2 className="font-bold  text-3xl ">NFT Collections</h2>
           <p className="mb-10 italic">Available NFT Collections To Purchase</p>
 
-          <div>
+          <div className="mb-4 space-y-3 italic">
             <p>
               This is a test NFT collection using Whitelabel checkout to allow
               for crosschain and fiat purchases.
@@ -75,12 +75,14 @@ function Page() {
               To buy with credit card, please use the credit card number below
               and fill all other information randomly:{" "}
             </p>
-            <p onClick={saveCreditCardNumberToClipBoard} className="font-bold underline cursor">4242 4242 4242 4242</p>
+            <p onClick={saveCreditCardNumberToClipBoard} className="font-bold underline cursor-pointer">4242 4242 4242 4242
+
+            </p>
           </div>
 
           <div className="grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-16">
             <a href="#" className="group" onClick={mintNft}>
-              <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+              <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-xl bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                 <Image
                   width={400}
                   height={420}
@@ -96,7 +98,7 @@ function Page() {
             </a>
 
             <a href="#" className="group" onClick={mintNft}>
-              <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+              <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-xl bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                 <Image
                   width={400}
                   height={420}
@@ -112,7 +114,7 @@ function Page() {
             </a>
 
             <a href="#" className="group" onClick={mintNft}>
-              <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+              <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-xl bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                 <Image
                   width={400}
                   height={420}
