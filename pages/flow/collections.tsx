@@ -1,8 +1,8 @@
 import Layout from "../../components/Layout";
-import CollectionImage from "../../public/spring-collection.png";
-import TigerOne from "../../public/summer-collection.png";
-import TigerThree from "../../public/tiger-4.png";
-import TigerTwo from "../../public/winter-collection.png";
+import TigerThree from "../../public/autumn.png";
+import CollectionImage from "../../public/spring.png";
+import TigerOne from "../../public/summer.png";
+import TigerTwo from "../../public/winter.png";
 import Image from "next/image";
 
 function Page() {
@@ -75,8 +75,11 @@ function Page() {
               To buy with credit card, please use the credit card number below
               and fill all other information randomly:{" "}
             </p>
-            <p onClick={saveCreditCardNumberToClipBoard} className="font-bold underline cursor-pointer">4242 4242 4242 4242
-
+            <p
+              onClick={saveCreditCardNumberToClipBoard}
+              className="font-bold underline cursor-pointer"
+            >
+              4242 4242 4242 4242
             </p>
           </div>
 
@@ -108,6 +111,22 @@ function Page() {
                 />
               </div>
               <h3 className="mt-4 text-sm text-gray-700">Summer Collection</h3>
+              <p className="mt-1 text-lg font-medium text-gray-900">
+                0.0001 ETH
+              </p>
+            </a>
+
+            <a href="#" className="group" onClick={mintNft}>
+              <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-xl bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+                <Image
+                  width={400}
+                  height={420}
+                  src={TigerThree}
+                  alt="Person using a pen to cross a task off a productivity paper card."
+                  className="h-full w-full object-cover object-center group-hover:opacity-75"
+                />
+              </div>
+              <h3 className="mt-4 text-sm text-gray-700">Autumn Collection</h3>
               <p className="mt-1 text-lg font-medium text-gray-900">
                 0.0001 ETH
               </p>
