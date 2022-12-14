@@ -1,7 +1,7 @@
 import Layout from "../../components/Layout";
-import CollectionImage from "../../public/collection-image.png";
-import TigerOne from "../../public/tiger-2.png";
-import TigerTwo from "../../public/tiger-3.png";
+import CollectionImage from "../../public/spring-collection.png";
+import TigerOne from "../../public/summer-collection.png";
+import TigerTwo from "../../public/winter-collection.png";
 import TigerThree from "../../public/tiger-4.png";
 import Image from "next/image";
 
@@ -57,25 +57,25 @@ function Page() {
   return (
     <>
       <Layout />
-      <div className="bg-white">
+      <div className="">
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="font-bold  text-3xl ">NFT Collections</h2>
           <p className="mb-10 pb-10 italic">
             Available NFT Collections To Purchase
           </p>
 
-          <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          <div className="grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-16">
             <a href="#" className="group" onClick={mintNft}>
               <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                 <Image
-                  width={280}
-                  height={320}
+                  width={400}
+                  height={420}
                   src={CollectionImage}
                   alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
-                  className="h-full w-full object-cover object-center group-hover:opacity-75"
+                  className="h-full w-full object-center group-hover:opacity-75"
                 />
               </div>
-              <h3 className="mt-4 text-sm text-gray-700">Tiger One</h3>
+              <h3 className="mt-4 text-sm text-gray-700">Spring Collection</h3>
               <p className="mt-1 text-lg font-medium text-gray-900">
                 0.0001 ETH
               </p>
@@ -84,14 +84,14 @@ function Page() {
             <a href="#" className="group" onClick={mintNft}>
               <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                 <Image
-                  width={280}
-                  height={320}
+                  width={400}
+                  height={420}
                   src={TigerOne}
                   alt="Olive drab green insulated bottle with flared screw lid and flat top."
                   className="h-full w-full object-cover object-center group-hover:opacity-75"
                 />
               </div>
-              <h3 className="mt-4 text-sm text-gray-700">Tiger Two</h3>
+              <h3 className="mt-4 text-sm text-gray-700">Summer Collection</h3>
               <p className="mt-1 text-lg font-medium text-gray-900">
                 0.0001 ETH
               </p>
@@ -100,34 +100,20 @@ function Page() {
             <a href="#" className="group" onClick={mintNft}>
               <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                 <Image
-                  width={280}
-                  height={320}
+                  width={400}
+                  height={420}
                   src={TigerTwo}
                   alt="Person using a pen to cross a task off a productivity paper card."
                   className="h-full w-full object-cover object-center group-hover:opacity-75"
                 />
               </div>
-              <h3 className="mt-4 text-sm text-gray-700">Tiger Three</h3>
+              <h3 className="mt-4 text-sm text-gray-700">Winter Collection</h3>
               <p className="mt-1 text-lg font-medium text-gray-900">
                 0.0001 ETH
               </p>
             </a>
 
-            <a href="#" className="group" onClick={mintNft}>
-              <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
-                <Image
-                  width={280}
-                  height={320}
-                  src={TigerThree}
-                  alt="Hand holding black machined steel mechanical pencil with brass tip and top."
-                  className="h-full w-full object-cover object-center group-hover:opacity-75"
-                />
-              </div>
-              <h3 className="mt-4 text-sm text-gray-700">Tiger Three</h3>
-              <p className="mt-1 text-lg font-medium text-gray-900">
-                0.0001 ETH
-              </p>
-            </a>
+
           </div>
         </div>
       </div>
