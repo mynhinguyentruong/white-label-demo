@@ -17,7 +17,7 @@ export default function Layout() {
     const { navigation, something } = useContext(NavigationTabContext)
     console.log(navigation)
     return (
-        <Disclosure as="nav" className="bg-white">
+        <Disclosure as="nav" className="">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
