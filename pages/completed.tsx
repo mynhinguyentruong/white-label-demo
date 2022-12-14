@@ -39,7 +39,7 @@ export default function Completed() {
                 className="text-sm text-link text-green-500 hover:underline hover:animate-bounce align-center items-center justify-center"
                 target="_blank"
                 rel="noreferrer"
-                href="/flow/wallets"
+                href="/user/collection"
             >
                 <button className='px-28 py-3 rounded outline'>Open my wallet</button>
 
