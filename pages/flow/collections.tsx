@@ -61,7 +61,7 @@ function Page() {
   return (
     <>
       <Layout />
-      <div className="">
+      <div className="px-3">
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="font-bold  text-3xl ">NFT Collections</h2>
           <p className="mb-10 italic">Available NFT Collections To Purchase</p>

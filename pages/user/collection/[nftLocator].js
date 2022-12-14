@@ -23,7 +23,7 @@ function Page({ data }) {
     return (
         <>
         <Layout />
-        <div className="relative flex flex-1 w-full py-10 px-5">
+        <div className="relative flex flex-1 w-full py-10 px-10">
             <div className="flex justify-center flex-1 w-full item-start">
                 <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-x-[70px] max-w-[1300px]">
                     <div className="flex flex-col items-center justify-start py-10">
