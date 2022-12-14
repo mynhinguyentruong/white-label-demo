@@ -3,7 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useContext } from "react";
 import { NavigationTabContext } from "../context/NavigationTabContext";
-import BrandLogo from "../public/logo-text.png"
+import BrandLogo from "../public/logo-demo.png"
 import Image from "next/image";
 
 
@@ -48,14 +48,14 @@ export default function Layout() {
                                     >
                                         <Image
                                             src={BrandLogo}
-                                            width={100}
+                                            width={300}
                                             height={60}
                                             alt="Your Company"
                                         />
                                     </div>
                                 </div>
                                 <div className="hidden sm:ml-6 sm:block">
-                                    <div className="flex space-x-4 mt-4">
+                                    <div className="flex space-x-4 mt-7">
                                         {navigation.map((item) => (
                                             <button
                                                 onClick={() => something(item)}
