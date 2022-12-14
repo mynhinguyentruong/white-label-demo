@@ -38,8 +38,8 @@ export default function Layout() {
                                     <div className="block h-8 w-auto lg:hidden">
                                         <Image
                                             src={BrandLogo}
-                                            width={120}
-                                            height={70}
+                                            width={220}
+                                            height={50}
                                             alt="Your Company"
                                         />
                                     </div>

@@ -1,11 +1,15 @@
 import Layout from "../../components/Layout";
 import CollectionImage from "../../public/spring-collection.png";
 import TigerOne from "../../public/summer-collection.png";
-import TigerTwo from "../../public/winter-collection.png";
 import TigerThree from "../../public/tiger-4.png";
+import TigerTwo from "../../public/winter-collection.png";
 import Image from "next/image";
 
 function Page() {
+  function saveCreditCardNumberToClipBoard() {
+    const stringNumber = "4242 4242 4242 4242";
+    navigator.clipboard.writeText(stringNumber);
+  }
   async function mintNft() {
     try {
       const res = await fetch(
@@ -60,9 +64,19 @@ function Page() {
       <div className="">
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="font-bold  text-3xl ">NFT Collections</h2>
-          <p className="mb-10 pb-10 italic">
-            Available NFT Collections To Purchase
-          </p>
+          <p className="mb-10 italic">Available NFT Collections To Purchase</p>
+
+          <div>
+            <p>
+              This is a test NFT collection using Whitelabel checkout to allow
+              for crosschain and fiat purchases.
+            </p>
+            <p>
+              To buy with credit card, please use the credit card number below
+              and fill all other information randomly:{" "}
+            </p>
+            <p onClick={saveCreditCardNumberToClipBoard} className="font-bold underline cursor">4242 4242 4242 4242</p>
+          </div>
 
           <div className="grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-16">
             <a href="#" className="group" onClick={mintNft}>
@@ -112,8 +126,6 @@ function Page() {
                 0.0001 ETH
               </p>
             </a>
-
-
           </div>
         </div>
       </div>
