@@ -17,7 +17,7 @@ function Page() {
         {
           method: "POST",
           body: JSON.stringify({
-            clientId: "aa407fba-284b-4f30-92cc-c6204de1ca22",
+            clientId: "499ea8a3-ce05-4eef-a1b0-a56587b68ed0",
             userId: "2",
             emailTo: "nhi@paella.dev",
             paymentMethod: "fiat",
@@ -31,9 +31,9 @@ function Page() {
               _count: 1,
             },
             collection: {
-              title: "Cool",
+              title: "Spring Collection",
               photo:
-                "https://gateway.ipfscdn.io/ipfs/QmPbHFfbQkCcoKEk3hRoAqSqLs45KdjAnSP1siq5ToLxVE/collection-image.png",
+                "https://ipfs.moralis.io:2053/ipfs/QmPJz89LmJtBR1MTNzbsYPpQXG1T5wQ141ZB59fYjUV3Wo",
               description:
                 "La préservation de la pointe du Cap Ferret a besoin de support financi…",
             },

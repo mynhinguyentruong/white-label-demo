@@ -18,7 +18,7 @@ function Page() {
             <Layout/>
 
           
-<div className="bg-white">
+<div className="">
   <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
   <h2 className="font-bold mb-10 text-3xl pb-10">Products</h2>
 
