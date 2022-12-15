@@ -50,7 +50,7 @@ function Page({data}) {
             </p>
         </div>
     </div>
-    <div className="flex items-center justify-start w-full mb-6 md:flex-col bg-red-500">
+    <div className="flex items-center justify-start w-full mb-6 md:flex-col ">
         {MenuItems.map((item) => {
             return (
                 <MenuItem
