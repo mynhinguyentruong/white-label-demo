@@ -50,7 +50,7 @@ function Page({data}) {
             </p>
         </div>
     </div>
-    <div className="flex items-center justify-start w-full mb-6 md:flex-col">
+    <div className="flex items-center justify-start w-full mb-6 md:flex-col bg-red-500">
         {MenuItems.map((item) => {
             return (
                 <MenuItem
@@ -137,7 +137,7 @@ function MenuItem({ title, href, disabled = false }) {
 
     const menuItemClasses = classNames(
         "flex w-full rounded-lg h-[50px] items-center justify-center p-3 transition-all duration-100",
-        match ? "bg-[#f2f4f5] text-[#424852]" : "bg-white text-[#8898a0] hover:opacity-70"
+        match ? "bg-[#DBE4EE] text-[#424852]" : "bg-white text-[#8898a0] hover:opacity-70"
     );
 
     return (
