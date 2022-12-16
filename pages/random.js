@@ -9,7 +9,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function YourCustomConnectButton() {
-    const [address, setAddress] = useState(undefined);
+    const [address, setAddress] = useState();
     const [nfts, setNfts] = useState([]);
     const [crossmintConnect, setCrossmintConnect] = useState(null)
 
