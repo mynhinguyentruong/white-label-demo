@@ -170,7 +170,7 @@ function Collection({ nfts }) {
     
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const res = await fetch('https://staging.crossmint.io/api/v1-alpha1/wallets/sol:D6bDg4DcCpsprQEmnUdcWhpkj2pMDxEJa615oyvS3sQL/nfts', {
         headers: {
             'Content-Type': 'application/json',
