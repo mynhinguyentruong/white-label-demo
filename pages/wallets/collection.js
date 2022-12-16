@@ -179,7 +179,7 @@ export async function getStaticProps() {
           }
     })
     const data = await res.json();
-    const {nfts} = data;
+    const { nfts } = data;
 
     return {
       props: { nfts }, // will be passed to the page component as props
