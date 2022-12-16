@@ -1,4 +1,4 @@
-import NFTImage from "../public/nft-image.png"
+import NFTImage from "../public/spring.png"
 import Image from "next/image";
 
 export default function Completed() {

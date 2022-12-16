@@ -1,8 +1,8 @@
 import Layout from "../../components/Layout";
 import TigerThree from "../../public/autumn.png";
-import CollectionImage from "../../public/spring.png";
+import CollectionImage from "../../public/winter.png";
 import TigerOne from "../../public/summer.png";
-import TigerTwo from "../../public/winter.png";
+import TigerTwo from "../../public/spring.png";
 import Image from "next/image";
 
 function Page() {
