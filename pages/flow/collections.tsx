@@ -53,8 +53,9 @@ function Page() {
       const data = await res.json();
       console.log("checkout url", data.checkoutUrl);
       window.open(data.checkoutUrl, "popup", "width=600,height=900");
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.log(error.message);
+      alert(error.message)
     }
   }
 

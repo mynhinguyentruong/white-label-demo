@@ -1,8 +1,11 @@
 import Image from "next/image";
-import {ReactNode, useEffect, useState} from "react";
+import React, {ReactNode, useEffect, useState} from "react";
 import NFTImage from "../../public/nfts-animation.gif";
 import {PhotoIcon} from "@heroicons/react/24/solid";
 import {useRouter} from "next/router";
+import CrossmintLogo from "../../public/crossmint-logo.svg"
+import styles from "../../styles/Home.module.css";
+import crossmintLogo from "../../public/crossmint-logo.svg";
 
 
 export default function Success() {
@@ -91,9 +94,19 @@ export default function Success() {
             </div>
 
 
-            <div className="mt-6 mb-24">
-                Powered by mybrand
-            </div>
+            <footer className={styles.footer}>
+                <a
+                    href="https://www.crossmint.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Powered by{' '}
+                    <span className='pt-1'>
+                    <Image src={CrossmintLogo} alt="Crossmint Logo" width={72} height={16} />
+          </span>
+                    Crossmint
+                </a>
+            </footer>
         </div>
     )
 
