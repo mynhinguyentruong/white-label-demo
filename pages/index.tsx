@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from "next/link";
 
 import React, { useState } from 'react'
 
@@ -25,7 +26,6 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://www.crossmint.io/">White Label Demo!</a>
         </h1>
-
         <p className={styles.description}>
           Get started with our Beta version utilizing {' '}
           <code className={styles.code}>/api/v1-alpha1</code>
@@ -37,24 +37,28 @@ const Home: NextPage = () => {
         <div className={styles.grid}>
           
           <Register />
-          <a
-            href="/wallets"
+          <Link
+            href="/index"
             className={styles.card}
           >
+            <>
             <h2>Create a Wallet &rarr;</h2>
-            <p>Create [brand-name]'s multi-chain custodial wallets for your customers!</p>
-          </a>
+            <p>Create [brand-name]s multi-chain custodial wallets for your customers!</p>
+            </>
+          </Link>
           <Checkout />
-          <a
+          <Link
             href="/wallets/collection"
             className={styles.card}
           >
+            <>
             <h2>Dev Console &rarr;</h2>
             <ul>
               <li>Check the current state of a user wallet</li>
               <li>Transfer NFT to another wallet</li>
             </ul>
-          </a>
+            </>
+          </Link>
           
         </div>  
       </main>
@@ -63,17 +67,20 @@ const Home: NextPage = () => {
       
 
       <footer className={styles.footer}>
-        <a
+
+        <Link
           href="https://www.crossmint.io"
           target="_blank"
           rel="noopener noreferrer"
         >
+          <>
           Powered by{' '}
           <span className='pt-1'>
             <Image src={crossmintLogo} alt="Crossmint Logo" width={72} height={16} />
           </span>
           Crossmint
-        </a>
+          </>
+        </Link>
       </footer>
     </div>
   )

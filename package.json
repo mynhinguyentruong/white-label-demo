@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@crossmint/client-sdk-react-ui": "^0.2.0",
+    "@crossmint/connect": "^0.0.5-alpha-2",
     "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^2.0.13",
     "next": "12.3.1",

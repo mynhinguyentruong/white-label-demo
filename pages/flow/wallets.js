@@ -18,7 +18,7 @@ import {
 function Page({data}) { // data is an array
 
 
-    const MenuItems: { title: string; href: string; disabled?: boolean }[] = [
+    const MenuItems = [
         { title: "Account", href: `/user/account` },
         { title: "Collection", href: `/user/collection` },
         { title: "Transactions", href: `/user/transactions` },
@@ -84,7 +84,7 @@ function Page({data}) { // data is an array
             </div>
                     <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                         {data.map(nft => (
-                           
+                           <Link href={`/flow/wallets/${nft.locator}`} key={nft.mintHash}>
                             <a href={`/flow/wallets/${nft.locator}`} className="group"  key={nft.mintHash}>
                                 <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                                     <Image width={280} height={320} src={nft.metadata.image} alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." className="h-full w-full object-cover object-center group-hover:opacity-75"/>
@@ -92,6 +92,7 @@ function Page({data}) { // data is an array
                                 <h3 className="mt-4 text-sm font-bold text-gray-700">{nft.metadata.name}</h3>
                                 <p className="mt-1 text-xs text-gray-900 truncate">mintHash: {nft.locator}</p>
                             </a>
+                           </Link>
                             
                         ))}
 
@@ -101,8 +102,8 @@ function Page({data}) { // data is an array
                <h1 className="font-bold text-5xl my-3">
                     No NFTs Found
                </h1>
-               <p>We couldn't find anything in your collection</p>
-               <p>Visit <a href="/flow/collections" className="hover:text-green-700 text-green-400">Collections </a> to buy NFT on our site</p>
+               <p>We couldnt find anything in your collection</p>
+               <p>Visit <Link href="/flow/collections" className="hover:text-green-700 text-green-400">Collections </Link> to buy NFT on our site</p>
             </div>)}
         </>
     )
@@ -126,7 +127,7 @@ export async function getServerSideProps(context) {
   }
 
 
-  function MenuItem({ title, href, disabled = false }: IMenuItem) {
+  function MenuItem({ title, href, disabled = false }) {
     const { pathname } = useRouter();
 
     const match = pathname.indexOf(href) !== -1;
@@ -150,7 +151,7 @@ export async function getServerSideProps(context) {
     };
 
     const handleClick = disabled
-        ? (e: any) => {
+        ? (e) => {
               e.preventDefault();
           }
         : undefined;
@@ -178,6 +179,6 @@ export async function getServerSideProps(context) {
 }
 export default Page
 
-export function classNames(...classes: (string | undefined)[]) {
+export function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }

@@ -125,7 +125,7 @@ export const CheckoutLayoutContainer = ({children, className, ...props}) => (
     </div>
 );
 
-export function classNames(...classes: (string | undefined)[]) {
+export function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 

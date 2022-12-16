@@ -9,7 +9,7 @@ function Register() {
 
     })
 
-    async function registerCollection(e: React.FormEvent<HTMLInputElement>) {
+    async function registerCollection(e) {
     e.preventDefault();
     try {
       const response = await fetch('/collections/register', {

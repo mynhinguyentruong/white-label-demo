@@ -17,7 +17,7 @@ import Layout from "../../../components/Layout";
 function Page({data}) {
 
 
-    const MenuItems: { title: string; href: string; disabled?: boolean }[] = [
+    const MenuItems = [
         { title: "Account", href: `/user/account` },
         { title: "Collection", href: `/user/collection` },
         { title: "Transactions", href: `/user/transactions` },
@@ -92,8 +92,8 @@ function Page({data}) {
                <h1 className="font-bold text-3xl my-3">
                     No NFTs Found
                </h1>
-               <p>We couldn't find anything in your collection</p>
-               <p>Visit <a href="/flow/collections" className="hover:text-green-700 text-green-400">Collections </a> to buy NFT on our site</p>
+               <p>We couldnt find anything in your collection</p>
+               <p>Visit <Link href="/flow/collections" className="hover:text-green-700 text-green-400">Collections </Link> to buy NFT on our site</p>
             </div>)}
 </div>
 </div>
@@ -126,7 +126,7 @@ function MenuItem({ title, href, disabled = false }) {
     };
 
     const handleClick = disabled
-        ? (e: any) => {
+        ? (e) => {
               e.preventDefault();
           }
         : undefined;
@@ -154,7 +154,7 @@ function MenuItem({ title, href, disabled = false }) {
 }
 export default Page
 
-export function classNames(...classes: (string | undefined)[]) {
+export function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 

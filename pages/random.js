@@ -1,4 +1,12 @@
 import Layout from "../components/Layout";
+import {
+    BlockchainTypes,
+    CrossmintEnvironment,
+    CrossmintEVMWalletAdapter,
+} from "@crossmint/connect";
+
+import { useState } from "react";
+import Image from "next/image";
 
 export default function YourCustomConnectButton() {
     const [address, setAddress] = useState<string | undefined>(undefined);
@@ -41,9 +49,6 @@ export default function YourCustomConnectButton() {
 
     }
 
-    async function signMessage() {
-
-    }
 
 
     return (
@@ -75,11 +80,4 @@ export default function YourCustomConnectButton() {
 );
 }
 
-import {
-    BlockchainTypes,
-    CrossmintEnvironment,
-    CrossmintEVMWalletAdapter,
-} from "@crossmint/connect";
 
-import { useState } from "react";
-import Image from "next/image";

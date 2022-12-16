@@ -34,7 +34,7 @@ function Wallet() {
     return (
         <>
             <h3>
-                    Ideally, you would want this unique identifier (userId) to be associate with your client's account
+                    Ideally, you would want this unique identifier (userId) to be associate with your clients account
 
             </h3>
             <h4>With this unique id, you can check the content of the wallet associated with this userId</h4>
