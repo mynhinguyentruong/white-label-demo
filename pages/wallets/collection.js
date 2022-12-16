@@ -178,8 +178,8 @@ export async function getStaticProps() {
             'X-CLIENT-SECRET': process.env.CROSSMINT_X_CLIENT_SECRET
           }
     })
-    const data = await res.json()
-    const nfts = data.nfts;
+    const data = await res.json();
+    const {nfts} = data;
 
     return {
       props: { nfts }, // will be passed to the page component as props
