@@ -10,7 +10,7 @@ export default function NavigationTabProvider({ children }) {
 
 
     const [navigation, setNavigation] = useState([
-        { name: 'Shop', href: '/flow/1', current: true },
+        { name: 'Products', href: '/flow/1', current: true },
         { name: 'Stores', href: '/flow/1', current: false },
         { name: 'NFTs', href: '/flow/collections', current: false },
         { name: 'NFT Wallet', href: '/user/collection', current: false },
