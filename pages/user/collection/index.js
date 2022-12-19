@@ -137,17 +137,17 @@ function MenuItem({ title, href, disabled = false }) {
 
     const menuItemClasses = classNames(
         "flex w-full rounded-lg h-[50px] items-center justify-center p-3 transition-all duration-100",
-        match ? "bg-[#DBE4EE] text-[#424852]" : "bg-white text-[#8898a0] hover:opacity-70"
+        match ? "bg-[#DBE4EE] text-[#424852]" : "bg-white text-[#8898a0] hover:opacity-70 cursor-not-allowed"
     );
 
     return (
         <Link href={href}>
             <a onClick={handleClick} className={menuItemClasses}>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center	">
                     <Icon />
                 </div>
 
-                <p className="flex-1 hidden ml-2 font-semibold md:flex md:text-lg">{title}</p>
+                <p className="flex-1 hidden ml-2 font-semibold md:flex md:text-lg ">{title}</p>
             </a>
         </Link>
     );
