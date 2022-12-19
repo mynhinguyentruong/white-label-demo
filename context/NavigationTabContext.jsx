@@ -13,9 +13,7 @@ export default function NavigationTabProvider({ children }) {
         { name: 'Products', href: '/flow/1', current: true },
         { name: 'Stores', href: '/store', current: false },
         { name: 'NFTs', href: '/flow/collections', current: false },
-        { name: 'NFT Wallet', href: '/user/collection', current: false },
-        { name: 'Support', href: 'https://docs.crossmint.io/docs', current: false },
-    ])
+        { name: 'NFT Wallet', href: '/user/collection', current: false }])
 
     const [isLoading, setIsLoading] = useState(false)
 
