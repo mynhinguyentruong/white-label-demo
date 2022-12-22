@@ -18,7 +18,7 @@ function Page({data}) {
 
 
     const MenuItems = [
-        { title: "Account", href: `/user/account` },
+        { title: "Account", href: `/user/account`,  },
         { title: "Collection", href: `/user/collection` },
         { title: "Transactions", href: `/user/transactions` },
         { title: "Linked Accounts", href: `/user/connections` },
@@ -137,7 +137,7 @@ function MenuItem({ title, href, disabled = false }) {
 
     const menuItemClasses = classNames(
         "flex w-full rounded-lg h-[50px] items-center justify-center p-3 transition-all duration-100",
-        match ? "bg-[#DBE4EE] text-[#424852]" : "bg-white text-[#8898a0] hover:opacity-70 cursor-not-allowed"
+        match ? "bg-[#DBE4EE] text-[#424852]" : "bg-white text-[#8898a0] hover:opacity-70 hover:cursor-not-allowed pointer-events-none"
     );
 
     return (
