@@ -1,7 +1,11 @@
 import NFTImage from "../public/nft-image.png";
 import Image from "next/image";
+import { useRouter } from 'next/router'
+
 
 function Collection({ price }) {
+  const router = useRouter()
+
   async function mintNft() {
     // fetch collections available
 
@@ -10,13 +14,12 @@ function Collection({ price }) {
       {
         method: "POST",
         body: JSON.stringify({
-          clientId: "e844f3de-e3f9-4fcb-abc6-15e1bff5e6d7",
-          userId: "6346b401fdf86137e454caac",
-          emailTo: "nhi@paella.dev",
-          mintTo: "D6bDg4DcCpsprQEmnUdcWhpkj2pMDxEJa615oyvS3sQL",
+          clientId: "73225dd9-6c7a-4ce4-b35a-283aed64f9e1",
+          userId: "asdasd",
+          emailTo: "asdkljaskdjalkdjas@asdasd.com",
           paymentMethod: "fiat",
           mintConfig: {
-            type: "candy-machine",
+            type: "erc-721",
             totalPrice: "0.0001",
             environment: "staging",
           },
@@ -25,18 +28,18 @@ function Collection({ price }) {
           },
           redirect: {
             continue: "http://localhost:3000/transaction/succeeded",
-            cancelled: "http://localhost:3000/transaction/failed",
+            cancel: "http://localhost:3000/transaction/failed",
           },
         }),
         headers: {
           "Content-Type": "application/json",
-          "X-PROJECT-ID": process.env.CROSSMINT_X_PROJECT_ID,
-          "X-CLIENT-SECRET": process.env.CROSSMINT_X_CLIENT_SECRET,
+          "X-PROJECT-ID": "391d6333-2aa9-4d8f-9580-eda24f859b8f",
+          "X-CLIENT-SECRET": "sk_test.F8NuE35N.BKa7avCWsKslqojLY2um2oU0vVD8N6Bp",
         },
       }
     );
     const data = await res.json();
-    window.open(data.checkoutUrl, "checkout", "width=500,height=1000");
+    router.push(data.checkoutUrl, as , "something");
     // router.push(data.checkoutUrl)
   }
 

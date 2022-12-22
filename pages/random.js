@@ -19,9 +19,8 @@ export default function YourCustomConnectButton() {
   async function connectToCrossmint() {
     // Initialize the Crossmint connect.
     const _crossmintConnect = new CrossmintEVMWalletAdapter({
-      apiKey: process.env.API_KEY,
+      apiKey: "sk_test.buBlwN0Q.9LsZvG3O7JYdgqZmtxalvCC3aRYOlFZu",
       chain: BlockchainTypes.ETHEREUM, // BlockchainTypes.ETHEREUM || BlockchainTypes.POLYGON. For solana use BlockchainTypes.SOLANA,
-      environment: CrossmintEnvironment.STAGING,
     });
 
     setCrossmintConnect(_crossmintConnect);
@@ -55,12 +54,12 @@ export default function YourCustomConnectButton() {
   console.log("crossmint connect instate: ", crossmintConnect);
   console.log("crossmint connect instate: ", crossmintConnect);
 
-  function something() {
+  async function something() {
     const message = "my stupid message";
-    const signedMessage = crossmintConnect.signMessage(message);
+    const signedMessage = await crossmintConnect.signMessage("8B05A8F63624");
     console.log("singned", signedMessage);
     console.log("singned", signedMessage);
-    console.log("singned", signedMessage);
+    console.log(typeof signedMessage);
   }
 
   return (

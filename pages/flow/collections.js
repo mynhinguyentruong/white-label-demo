@@ -18,16 +18,15 @@ function Page() {
           method: "POST",
           body: JSON.stringify({
             clientId: "d796882b-ce99-4f89-96d8-fab6b1a745fe",
-            userId: "2",
-            emailTo: "nhi@paella.dev",
+            userId: "2sadasd",
+            emailTo: "sosoasdaksd@sadsmd.com",
             paymentMethod: "fiat",
             price: "0.0001",
             mintArgs: {
-              type: "erc-1155",
+              type: "candy-machine",
               totalPrice: "0.0001",
               environment: "staging",
               _id: "1",
-              to: "adfaf",
               _count: 1,
             },
             collection: {
