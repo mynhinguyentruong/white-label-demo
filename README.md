@@ -14,6 +14,7 @@ Copy the .env.local.example file in this directory to .env.local (which will be 
 
 ```
 cp .env.local.example .env.local
+```
 
 ### 3. Start the application
 
