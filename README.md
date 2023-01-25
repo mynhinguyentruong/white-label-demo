@@ -30,3 +30,6 @@ To run it in production mode, use:
 yarn build
 yarn start
 ```
+
+## Caution
+Do not fetch data from the front-end (client) as it is risky. Always make sure that you're fetching from the server
