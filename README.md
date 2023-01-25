@@ -1,4 +1,31 @@
-1. Clone repo 
-2. Run `yarn install`
-3. Create a `.env.local` file with the following variables: CROSSMINT_X_CLIENT_SECRET & CROSSMINT_X_PROJECT_ID
-4. Run `yarn dev`
+## Getting Started
+
+### 1. Clone the repository and install dependencies
+
+```
+git clone https://github.com/mynhinguyentruong/white-label-demo.git
+cd white-label-demo
+yarn install
+```
+
+### 2. Configure your local environment
+
+Copy the .env.local.example file in this directory to .env.local (which will be ignored by Git):
+
+```
+cp .env.local.example .env.local
+
+### 3. Start the application
+
+To run your site locally, use:
+
+```
+yarn dev
+```
+
+To run it in production mode, use:
+
+```
+yarn build
+yarn start
+```
