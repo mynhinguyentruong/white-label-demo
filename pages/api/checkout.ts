@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
-  checkoutURL: string;
+  checkoutUrl: string;
 };
 
 export default async function handler(
@@ -48,6 +48,5 @@ export default async function handler(
       }
   );
   const data = await response.json();
-  console.log("checkout url", data.checkoutUrl);
-  res.status(200).json({ checkoutURL: data.checkoutURL });
+  res.status(200).json({ checkoutUrl: data.checkoutUrl });
 }
