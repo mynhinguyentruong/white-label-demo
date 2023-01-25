@@ -139,8 +139,8 @@ function Page({ data }) {
 export default Page
 
 
-export async function getServerSideProps(context) {
-    // https://staging.crossmint.io/api/v1-alpha1/wallets/sol:9Q4uKgXZNo6pjJq5XDMToyGqeM4BgRTdRcg4Puixcivq/nfts
+export async function getServerSideProps() {
+    // Fetching uri must be an absolute path
     const res = await fetch("https://white-label-demo-a341.vercel.app/api/wallet")
     const data = await res.json()
 
