@@ -5,6 +5,12 @@ const nextConfig = {
   images: {
     domains: ['www.crossmint.io', 'nftstorage.link', 'tailwindui.com', 'gateway.ipfscdn.io']
   },
+  async redirects() {
+    return [
+      { source: '/', destination: '/flow/1', permanent: true },
+    ]
+  }
+    ,
   async rewrites() {
     return [
       {

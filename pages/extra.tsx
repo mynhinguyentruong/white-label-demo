@@ -38,7 +38,7 @@ const Home: NextPage = () => {
           
           <Register />
           <Link
-            href="/index"
+            href="/extra"
             className={styles.card}
           >
             <>
